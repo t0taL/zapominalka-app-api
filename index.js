@@ -35,10 +35,17 @@ app.use('/images', imagesRoutes);
 async function start(url) {
   try {
     await mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
-  
-    app.listen(process.env.PORT, () => {
-      console.log(`Server is running on PORT: ${process.env.PORT}`);
-    });
+
+    const api_ip = process.env.API_IP;
+    if (!!api_ip) {
+      app.listen(process.env.PORT, api_ip, () => {
+        console.log(`Server is running on PORT: ${process.env.PORT}`);
+      });
+    } else {
+      app.listen(process.env.PORT, () => {
+        console.log(`Server is running on PORT: ${process.env.PORT}`);
+      });
+    }
   } catch (error) {
     console.log(error);
   }

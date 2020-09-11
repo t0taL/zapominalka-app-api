@@ -2,12 +2,12 @@
   "name": "zapominalka",
   "version": "1.0.0",
   "description": "zapominalka api",
-  "author": "Korneev Vitaly <zapominalka-app@yandex.com>",
+  "author": "Korneev Vitaly <zapominalka.app@gmail.com>",
   "license": "ISC",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon ./index.js 192.168.1.204"
+    "dev": "nodemon ./index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
